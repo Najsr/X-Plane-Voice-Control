@@ -52,12 +52,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Commands\PackControl.cs" />
     <Compile Include="Commands\ComSwapControl.cs" />
     <Compile Include="Commands\EngineFuelControl.cs" />
     <Compile Include="Commands\FlapControl.cs" />
     <Compile Include="Commands\LandingLights.cs" />
     <Compile Include="Commands\EngineStartUp.cs" />
     <Compile Include="Commands\ApuControl.cs" />
+    <Compile Include="Commands\SmokingAndSeatbeltsControl.cs" />
+    <Compile Include="Commands\AirBleedControl.cs" />
+    <Compile Include="Commands\WindowHeatControl.cs" />
+    <Compile Include="Commands\ProbeHeatControl.cs" />
     <Compile Include="Commands\TaxiLights.cs" />
     <Compile Include="Commands\GearControl.cs" />
     <Compile Include="Commands\ControlTemplate.cs" />

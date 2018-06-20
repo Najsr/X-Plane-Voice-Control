@@ -13,18 +13,19 @@ namespace X_Plane_Voice_Control.Commands
 {
     class TaxiLights : ControlTemplate
     {
-        private readonly string[] _taxiLightsOnStrings = { "taxi lights on" };
-        private readonly string[] _taxiLightsOffStrings = { "taxi lights off" };
+        private readonly string[] _taxiLightsOnStrings = { "on" };
+        private readonly string[] _taxiLightsOffStrings = { "off" };
 
         public TaxiLights(ExtPlaneInterface interface_, SpeechSynthesizer synthesizer) : base(interface_, synthesizer)
         {
-            var brakeGrammar = new GrammarBuilder();
-            brakeGrammar.Append("please", 0, 1);
-            brakeGrammar.Append("set", 0, 1);
-            brakeGrammar.Append(new Choices(_taxiLightsOnStrings.Concat(_taxiLightsOffStrings).ToArray()));
-            brakeGrammar.Append("please", 0, 1);
-            Grammar = new Grammar(brakeGrammar);
-            RecognitionPattern = Constants.DeserializeRecognitionPattern(brakeGrammar.DebugShowPhrases);
+            var taxiLightGrammar = new GrammarBuilder();
+            taxiLightGrammar.Append("please", 0, 1);
+            taxiLightGrammar.Append("set", 0, 1);
+            taxiLightGrammar.Append("taxi lights");
+            taxiLightGrammar.Append(new Choices(_taxiLightsOnStrings.Concat(_taxiLightsOffStrings).ToArray()));
+            taxiLightGrammar.Append("please", 0, 1);
+            Grammar = new Grammar(taxiLightGrammar);
+            RecognitionPattern = Constants.DeserializeRecognitionPattern(taxiLightGrammar.DebugShowPhrases);
         }
 
         public sealed override Grammar Grammar { get; }

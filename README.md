@@ -36,11 +36,21 @@ You need ExtPlane Plugin installed ([Download](https://github.com/vranki/ExtPlan
 * Taxi lights control
   *  __set [taxi lights on / taxi lights off]__ please
 * Engine control
-  *  __[start / light up / kill / shut down] the engine number [one / two]]__ please
+  *  __[start / light up / kill / shut down] the engine number [one / two]__ please
   *  __introduce fuel [into / to] number engine [one / two]__ please
 * APU control
   *  __[start / light up / stop / shutdown] APU__ please
   *  __APU [on / off]__ please
+* Probe heat
+  *  set __probe heat [on/off]__ please
+* Window heat
+  *  set __window heat [on/off]__ please
+* No Smoking / Seatbelts
+  *  set __[no smoking / seatbelts] [off / auto / on]__ please
+* Packs
+  *  set __[left / right] pack to [off / auto / high]__ please
+* Bleed air
+  *  set __[apu / engine one / engine two] bleed air to [off / on]__ please
 
 __Cheat sheet:__  
 * __Needed__ 
