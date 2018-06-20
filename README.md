@@ -17,8 +17,11 @@ You need ExtPlane Plugin installed ([Download](https://github.com/vranki/ExtPlan
 * Extract the ZIP and run the .exe file 
 * Enjoy and report any bugs encountered
 
-
-End with an example of getting some data out of the system or using it for a little demo
+### Available Commands
+* Parking brake control
+* Com set and swap
+* Flaps control
+* Gear control
 
 ## Built With
 
@@ -36,7 +39,7 @@ See also the list of [contributors](https://github.com/Najsr/X-Plane-Voice-Contr
 
 ## License
 
-This project is licensed under the GPLv3 License - see the [LICENSE.md](LICENSE) file for details
+This project is licensed under the GPLv3 License - see the [LICENSE](LICENSE) file for details
 
 ## Acknowledgments
 
