@@ -1,10 +1,9 @@
 # X-Plane Voice Control
 
-Simple to use Voice control made for Zibo's awesome 738X (most likely will work for 739 Ultimate)
+Simple to use Voice control made for Zibo's awesome 738X & 739 Ultimate
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
 ### Prerequisites
 
@@ -32,9 +31,9 @@ You need ExtPlane Plugin installed ([Download](https://github.com/vranki/ExtPlan
 * Gear control
   * __set the [gear up / gear down]__ please
 * Landing lights control
-  *  __set [landing lights on / landing lights off]__ please
+  *  set __[landing lights on / landing lights off]__ please
 * Taxi lights control
-  *  __set [taxi lights on / taxi lights off]__ please
+  *  set __[taxi lights on / taxi lights off]__ please
 * Engine control
   *  __[start / light up / kill / shut down] the engine number [one / two]__ please
   *  __introduce fuel [into / to] number engine [one / two]__ please
@@ -79,4 +78,4 @@ This project is licensed under the GPLv3 License - see the [LICENSE](LICENSE) fi
 ## Acknowledgments
 
 * [jrunestone](https://github.com/jrunestone) - For his work on ExtPlane NET library
-* [vranki](https://github.com/ranki) - For the ExtPlane library
+* [vranki](https://github.com/vranki) - For the ExtPlane library
