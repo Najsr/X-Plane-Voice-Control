@@ -26,6 +26,7 @@ You need ExtPlane Plugin installed ([Download](https://github.com/vranki/ExtPlan
 ## Built With
 
 * [.NET Framework](https://www.microsoft.com/net/download/windows/)
+* [ExtPlane Net library](https://github.com/Najsr/ExtPlaneNet) - modified
 
 ## Contributing
 
