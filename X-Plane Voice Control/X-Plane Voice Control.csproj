@@ -54,6 +54,7 @@
   <ItemGroup>
     <Compile Include="Commands\ComSwapControl.cs" />
     <Compile Include="Commands\FlapControl.cs" />
+    <Compile Include="Commands\LandingLights.cs" />
     <Compile Include="Commands\TaxiLights.cs" />
     <Compile Include="Commands\GearControl.cs" />
     <Compile Include="Commands\ControlTemplate.cs" />

@@ -13,36 +13,35 @@ namespace X_Plane_Voice_Control.Commands
 {
     class TaxiLights : ControlTemplate
     {
-        private readonly string[] _brakeOnStrings = { "taxi lights on", "taxi lights down a notch" };
-        private readonly string[] _brakeOffStrings = { "taxi lights off", "taxi lighs up a notch" };
+        private readonly string[] _taxiLightsOnStrings = { "taxi lights on" };
+        private readonly string[] _taxiLightsOffStrings = { "taxi lights off" };
 
         public TaxiLights(ExtPlaneInterface interface_, SpeechSynthesizer synthesizer) : base(interface_, synthesizer)
         {
             var brakeGrammar = new GrammarBuilder();
             brakeGrammar.Append("please", 0, 1);
             brakeGrammar.Append("set", 0, 1);
-            brakeGrammar.Append(new Choices(_brakeOnStrings.Concat(_brakeOffStrings).ToArray()));
+            brakeGrammar.Append(new Choices(_taxiLightsOnStrings.Concat(_taxiLightsOffStrings).ToArray()));
             brakeGrammar.Append("please", 0, 1);
             Grammar = new Grammar(brakeGrammar);
-            XPlaneInterface.Subscribe<double>("laminar/B738/annunciator/parking_brake");
+            XPlaneInterface.Subscribe<double>("laminar/B738/toggle_switch/taxi_light_brightness_pos");
         }
 
         public sealed override Grammar Grammar { get; }
 
         public override void OnTrigger(RecognitionResult rResult, string phrase)
         {
-            var value = XPlaneInterface.GetDataRef<double>("laminar/B738/annunciator/parking_brake").Value;
-            if (_brakeOnStrings.Contains(phrase) && value == 0d)
+            var value = XPlaneInterface.GetDataRef<double>("laminar/B738/toggle_switch/taxi_light_brightness_pos").Value;
+            if (phrase.Contains("on") && value != 2)
             {
-                XPlaneInterface.SetExecutingCommand("sim/flight_controls/brakes_toggle_max");
-                SpeechSynthesizer.SpeakAsync("Parking brake set.");
+                XPlaneInterface.SetExecutingCommand("laminar/B738/toggle_switch/taxi_light_brigh_toggle");
+                SpeechSynthesizer.SpeakAsync("Taxi lights on");
             }
-            else if (_brakeOffStrings.Contains(phrase) && value == 1d)
+            else if (phrase.Contains("off") && value != 0)
             {
-                XPlaneInterface.SetExecutingCommand("sim/flight_controls/brakes_toggle_max");
-                SpeechSynthesizer.SpeakAsync("Parking brake released.");
+                XPlaneInterface.SetExecutingCommand("laminar/B738/toggle_switch/taxi_light_brigh_toggle");
+                SpeechSynthesizer.SpeakAsync("Taxi lights off");
             }
-
         }
     }
 }

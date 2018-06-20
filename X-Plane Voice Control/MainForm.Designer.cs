@@ -34,10 +34,12 @@
             // 
             // buttonListen
             // 
-            this.buttonListen.Location = new System.Drawing.Point(16, 15);
+            this.buttonListen.AutoSize = true;
+            this.buttonListen.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.buttonListen.Location = new System.Drawing.Point(14, 14);
             this.buttonListen.Margin = new System.Windows.Forms.Padding(4);
             this.buttonListen.Name = "buttonListen";
-            this.buttonListen.Size = new System.Drawing.Size(147, 28);
+            this.buttonListen.Size = new System.Drawing.Size(97, 26);
             this.buttonListen.TabIndex = 0;
             this.buttonListen.Text = "Start listening";
             this.buttonListen.UseVisualStyleBackColor = true;
@@ -52,18 +54,17 @@
             this.label1.Size = new System.Drawing.Size(0, 16);
             this.label1.TabIndex = 1;
             // 
-            // Form1
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.ClientSize = new System.Drawing.Size(252, 54);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonListen);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
-            this.Name = "Form1";
+            this.Name = "MainForm";
             this.Padding = new System.Windows.Forms.Padding(10);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "C# Voice control";
