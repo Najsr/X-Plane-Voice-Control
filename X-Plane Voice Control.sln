@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2000
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "X-Plane Voice Control", "X-Plane Voice Control\X-Plane Voice Control.csproj", "{69338806-EE5D-4000-BF6D-BF262AFE5BBB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{69338806-EE5D-4000-BF6D-BF262AFE5BBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69338806-EE5D-4000-BF6D-BF262AFE5BBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69338806-EE5D-4000-BF6D-BF262AFE5BBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69338806-EE5D-4000-BF6D-BF262AFE5BBB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8C0B1058-9D39-423B-B237-C188AAD7BA0E}
+	EndGlobalSection
+EndGlobal
