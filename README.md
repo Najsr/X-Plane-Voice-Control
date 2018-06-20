@@ -25,7 +25,7 @@ You need ExtPlane Plugin installed ([Download](https://github.com/vranki/ExtPlan
 
 ## Built With
 
-* [.NET Framework](https://www.microsoft.com/net/download/windows/) - The web framework used
+* [.NET Framework](https://www.microsoft.com/net/download/windows/)
 
 ## Contributing
 
