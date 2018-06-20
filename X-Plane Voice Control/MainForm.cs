@@ -47,6 +47,7 @@ namespace X_Plane_Voice_Control
                         continue;
 
                     var instance = (ControlTemplate)Activator.CreateInstance(type, _extPlaneInterface, _synthesizer);
+                    Console.WriteLine(instance.RecognitionPattern);
                     _abstractCommands.Add(instance);
                     _speechRecognitionEngine.LoadGrammarAsync(instance.Grammar);
                 }

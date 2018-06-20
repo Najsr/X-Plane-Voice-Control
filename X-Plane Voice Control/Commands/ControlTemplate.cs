@@ -23,6 +23,8 @@ namespace X_Plane_Voice_Control.Commands
 
         public abstract Grammar Grammar { get;}
 
+        public abstract string RecognitionPattern { get; }
+
         public abstract void OnTrigger(RecognitionResult result, string phrase);
     }
 }

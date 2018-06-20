@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Runtime.InteropServices;
+using System.Text;
 using System.Windows.Forms;
 
 namespace X_Plane_Voice_Control
@@ -18,6 +19,7 @@ namespace X_Plane_Voice_Control
             {
                 AllocConsole();
                 Console.SetOut(new PrefixedWriter());
+                Console.OutputEncoding = Encoding.UTF8;
                 Console.WriteLine(@"Console Initialized");
                 Console.Title = @"X-Plane Voice Control made by Nicer";
             }

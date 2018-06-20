@@ -25,10 +25,11 @@ namespace X_Plane_Voice_Control.Commands
             XPlaneInterface.Subscribe<double>("laminar/B738/annunciator/left_gear_safe");
             XPlaneInterface.Subscribe<double>("laminar/B738/annunciator/right_gear_transit");
             XPlaneInterface.Subscribe<double>("laminar/B738/annunciator/right_gear_safe");
-
+            RecognitionPattern = Constants.DeserializeRecognitionPattern(gearGrammar.DebugShowPhrases);
         }
 
         public sealed override Grammar Grammar { get; }
+        public override string RecognitionPattern { get; }
 
         public override void OnTrigger(RecognitionResult rResult, string phrase)
         {

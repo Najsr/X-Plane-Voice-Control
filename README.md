@@ -17,13 +17,29 @@ You need ExtPlane Plugin installed ([Download](https://github.com/vranki/ExtPlan
 * Extract the ZIP and run the .exe file 
 * Enjoy and report any bugs encountered
 
+### Command Line Option
+
+* Add __--console__ to launch parameter and CMD window will show with info about program
+
 ### Available Commands
 * Parking brake control
+  * __[set the parking brake / engage the brakes / release the brakes / disengage the brakes]__ please
 * Com set and swap
+  *  __[tune / set] [com1 / com2] to XXX [decimal / point] X__ XX
+  *  __swap [com1 / com2]__ please
 * Flaps control
+  * __set flaps [up / down / zero / one / two / five / ten / fifteen / twentyfive / thirty / forty]__ a notch please
 * Gear control
+  * __set the [gear up / gear down]__ please
 * Landing lights control
+  *  __set [landing lights on / landing lights off]__ please
 * Taxi lights control
+  *  __set [taxi lights on / taxi lights off]__ please
+
+__Cheat sheet:__  
+* __Needed__ 
+* Optional
+* __X => [zero / one / two / three / four / fiver / six / seven / eight / niner]__
 
 ## Built With
 

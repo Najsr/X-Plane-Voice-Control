@@ -13,13 +13,15 @@ namespace X_Plane_Voice_Control.Commands
         {
             var frequencyGrammar = new GrammarBuilder();
             frequencyGrammar.Append("please", 0, 1);
-            frequencyGrammar.Append(new Choices("swap"));
+            frequencyGrammar.Append("swap");
             frequencyGrammar.Append(new Choices(_comRadios));
             frequencyGrammar.Append("please", 0, 1);
+            RecognitionPattern = Constants.DeserializeRecognitionPattern(frequencyGrammar.DebugShowPhrases);
             Grammar = new Grammar(frequencyGrammar);
         }
 
         public override Grammar Grammar { get; }
+        public override string RecognitionPattern { get; }
 
         public override void OnTrigger(RecognitionResult result, string phrase)
         {
