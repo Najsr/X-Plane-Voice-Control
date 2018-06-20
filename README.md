@@ -22,6 +22,8 @@ You need ExtPlane Plugin installed ([Download](https://github.com/vranki/ExtPlan
 * Com set and swap
 * Flaps control
 * Gear control
+* Landing lights control
+* Taxi lights control
 
 ## Built With
 
