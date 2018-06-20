@@ -13,7 +13,7 @@ You need ExtPlane Plugin installed ([Download](https://github.com/vranki/ExtPlan
 
 ### Installing
 
-* Get the latest release from [here](https://github.com/Najsr/ExtPlaneNet/releases)
+* Get the latest release from [here](https://github.com/Najsr/X-Plane-Voice-Control/releases)
 * Extract the ZIP and run the .exe file 
 * Enjoy and report any bugs encountered
 
