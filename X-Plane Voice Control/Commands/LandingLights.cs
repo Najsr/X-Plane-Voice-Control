@@ -27,12 +27,16 @@ namespace X_Plane_Voice_Control.Commands
             landingLightsGrammar.Append(new Choices(_landingLightsOnStrings.Concat(_landingLiggOffStrings).ToArray()));
             landingLightsGrammar.Append("please", 0, 1);
             Grammar = new Grammar(landingLightsGrammar);
-            XPlaneInterface.Subscribe<float[]>("sim/cockpit2/switches/landing_lights_switch");
             RecognitionPattern = Constants.DeserializeRecognitionPattern(landingLightsGrammar.DebugShowPhrases);
         }
 
         public sealed override Grammar Grammar { get; }
         public override string RecognitionPattern { get; }
+
+        public override void DataRefSubscribe()
+        {
+            XPlaneInterface.Subscribe<float[]>("sim/cockpit2/switches/landing_lights_switch");
+        }
 
         public override void OnTrigger(RecognitionResult rResult, string phrase)
         {

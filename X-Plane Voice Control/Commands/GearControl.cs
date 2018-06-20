@@ -17,19 +17,22 @@ namespace X_Plane_Voice_Control.Commands
             gearGrammar.Append(new Choices("gear up", "gear down"));
             gearGrammar.Append("please", 0, 1);
             Grammar = new Grammar(gearGrammar);
-            XPlaneInterface.Subscribe<double>("laminar/B738/switches/landing_gear");
+            RecognitionPattern = Constants.DeserializeRecognitionPattern(gearGrammar.DebugShowPhrases);
+        }
 
+        public sealed override Grammar Grammar { get; }
+        public override string RecognitionPattern { get; }
+
+        public override void DataRefSubscribe()
+        {
+            XPlaneInterface.Subscribe<double>("laminar/B738/switches/landing_gear");
             XPlaneInterface.Subscribe<double>("laminar/B738/annunciator/nose_gear_transit");
             XPlaneInterface.Subscribe<double>("laminar/B738/annunciator/nose_gear_safe");
             XPlaneInterface.Subscribe<double>("laminar/B738/annunciator/left_gear_transit");
             XPlaneInterface.Subscribe<double>("laminar/B738/annunciator/left_gear_safe");
             XPlaneInterface.Subscribe<double>("laminar/B738/annunciator/right_gear_transit");
             XPlaneInterface.Subscribe<double>("laminar/B738/annunciator/right_gear_safe");
-            RecognitionPattern = Constants.DeserializeRecognitionPattern(gearGrammar.DebugShowPhrases);
         }
-
-        public sealed override Grammar Grammar { get; }
-        public override string RecognitionPattern { get; }
 
         public override void OnTrigger(RecognitionResult rResult, string phrase)
         {

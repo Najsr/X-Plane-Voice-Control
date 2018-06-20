@@ -35,6 +35,12 @@ You need ExtPlane Plugin installed ([Download](https://github.com/vranki/ExtPlan
   *  __set [landing lights on / landing lights off]__ please
 * Taxi lights control
   *  __set [taxi lights on / taxi lights off]__ please
+* Engine control
+  *  __[start / light up / kill / shut down] the engine number [one / two]]__ please
+  *  __introduce fuel [into / to] number engine [one / two]__ please
+* APU control
+  *  __[start / light up / stop / shutdown] APU__ please
+  *  __APU [on / off]__ please
 
 __Cheat sheet:__  
 * __Needed__ 

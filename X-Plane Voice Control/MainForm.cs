@@ -47,6 +47,12 @@ namespace X_Plane_Voice_Control
                         continue;
 
                     var instance = (ControlTemplate)Activator.CreateInstance(type, _extPlaneInterface, _synthesizer);
+                    try { instance.DataRefSubscribe(); }
+                    catch
+                    {
+                        // ignored
+                    }
+
                     Console.WriteLine(instance.RecognitionPattern);
                     _abstractCommands.Add(instance);
                     _speechRecognitionEngine.LoadGrammarAsync(instance.Grammar);
@@ -67,10 +73,9 @@ namespace X_Plane_Voice_Control
         {
             var class_ = _abstractCommands.First(x => x.Grammar == e.Result.Grammar);
             class_.OnTrigger(e.Result, e.Result.Text);
-            SetLabelText(e.Result.Text);
+            Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine($"Recognized text: {e.Result.Text}. Calling Class {class_.GetType().Name}");
+            Console.ForegroundColor = ConsoleColor.White;
         }
-
-        public void SetLabelText(string text) => label1.Text = text;
     }
 }

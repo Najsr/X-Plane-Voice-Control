@@ -24,12 +24,16 @@ namespace X_Plane_Voice_Control.Commands
             brakeGrammar.Append("please", 0, 1);
             Grammar = new Grammar(brakeGrammar);
             RecognitionPattern = Constants.DeserializeRecognitionPattern(brakeGrammar.DebugShowPhrases);
-            XPlaneInterface.Subscribe<double>("laminar/B738/annunciator/parking_brake");
         }
 
         public sealed override Grammar Grammar { get; }
 
         public override string RecognitionPattern { get; }
+
+        public override void DataRefSubscribe()
+        {
+            XPlaneInterface.Subscribe<double>("laminar/B738/annunciator/parking_brake");
+        }
 
         public override void OnTrigger(RecognitionResult rResult, string phrase)
         {

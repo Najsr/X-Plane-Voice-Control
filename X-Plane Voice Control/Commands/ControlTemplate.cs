@@ -25,6 +25,8 @@ namespace X_Plane_Voice_Control.Commands
 
         public abstract string RecognitionPattern { get; }
 
+        public abstract void DataRefSubscribe();
+
         public abstract void OnTrigger(RecognitionResult result, string phrase);
     }
 }

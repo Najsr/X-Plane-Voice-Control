@@ -24,11 +24,15 @@ namespace X_Plane_Voice_Control.Commands
             frequencyGrammar.Append(Constants.NumberChoices, 1, 3);
             Grammar = new Grammar(frequencyGrammar);
             RecognitionPattern = Constants.DeserializeRecognitionPattern(frequencyGrammar.DebugShowPhrases);
-            XPlaneInterface.Subscribe<int>("sim/cockpit2/radios/actuators/com1_standby_frequency_hz");
-            XPlaneInterface.Subscribe<int>("sim/cockpit2/radios/actuators/com2_standby_frequency_hz");
         }
         public sealed override Grammar Grammar { get; }
         public override string RecognitionPattern { get; }
+
+        public override void DataRefSubscribe()
+        {
+            XPlaneInterface.Subscribe<int>("sim/cockpit2/radios/actuators/com1_standby_frequency_hz");
+            XPlaneInterface.Subscribe<int>("sim/cockpit2/radios/actuators/com2_standby_frequency_hz");
+        }
 
         public override void OnTrigger(RecognitionResult rResult, string phrase)
         {

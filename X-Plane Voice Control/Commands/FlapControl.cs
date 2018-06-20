@@ -27,12 +27,16 @@ namespace X_Plane_Voice_Control.Commands
             flapGrammar.Append(_aNotch, 0, 1);
             flapGrammar.Append("please", 0, 1);
             Grammar = new Grammar(flapGrammar);
-            XPlaneInterface.Subscribe<float>("sim/flightmodel/controls/flaprqst");
             RecognitionPattern = Constants.DeserializeRecognitionPattern(flapGrammar.DebugShowPhrases);
         }
 
         public sealed override Grammar Grammar { get; }
         public override string RecognitionPattern { get; }
+
+        public override void DataRefSubscribe()
+        {
+            XPlaneInterface.Subscribe<float>("sim/flightmodel/controls/flaprqst");
+        }
 
         public override void OnTrigger(RecognitionResult rResult, string phrase)
         {

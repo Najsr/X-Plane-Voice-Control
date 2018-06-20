@@ -23,6 +23,11 @@ namespace X_Plane_Voice_Control.Commands
         public override Grammar Grammar { get; }
         public override string RecognitionPattern { get; }
 
+        public override void DataRefSubscribe()
+        {
+            
+        }
+
         public override void OnTrigger(RecognitionResult result, string phrase)
         {
             var index = phrase.IndexOf("com", StringComparison.InvariantCulture);

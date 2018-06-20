@@ -24,12 +24,16 @@ namespace X_Plane_Voice_Control.Commands
             brakeGrammar.Append(new Choices(_taxiLightsOnStrings.Concat(_taxiLightsOffStrings).ToArray()));
             brakeGrammar.Append("please", 0, 1);
             Grammar = new Grammar(brakeGrammar);
-            XPlaneInterface.Subscribe<double>("laminar/B738/toggle_switch/taxi_light_brightness_pos");
             RecognitionPattern = Constants.DeserializeRecognitionPattern(brakeGrammar.DebugShowPhrases);
         }
 
         public sealed override Grammar Grammar { get; }
         public override string RecognitionPattern { get; }
+
+        public override void DataRefSubscribe()
+        {
+            XPlaneInterface.Subscribe<double>("laminar/B738/toggle_switch/taxi_light_brightness_pos");
+        }
 
         public override void OnTrigger(RecognitionResult rResult, string phrase)
         {
