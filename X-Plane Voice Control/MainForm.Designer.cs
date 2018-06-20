@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.buttonListen = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // buttonListen
@@ -45,21 +44,11 @@
             this.buttonListen.UseVisualStyleBackColor = true;
             this.buttonListen.Click += new System.EventHandler(this.ButtonListen_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 144);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 16);
-            this.label1.TabIndex = 1;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(252, 54);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(252, 249);
             this.Controls.Add(this.buttonListen);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -76,7 +65,6 @@
         #endregion
 
         private System.Windows.Forms.Button buttonListen;
-        private System.Windows.Forms.Label label1;
     }
 }
 

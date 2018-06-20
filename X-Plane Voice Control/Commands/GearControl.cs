@@ -13,7 +13,8 @@ namespace X_Plane_Voice_Control.Commands
         {
             var gearGrammar = new GrammarBuilder();
             gearGrammar.Append("please", 0, 1);
-            gearGrammar.Append("set the", 0, 1);
+            gearGrammar.Append("set", 0, 1);
+            gearGrammar.Append("the", 0, 1);
             gearGrammar.Append(new Choices("gear up", "gear down"));
             gearGrammar.Append("please", 0, 1);
             Grammar = new Grammar(gearGrammar);
