@@ -52,6 +52,10 @@ You need ExtPlane Plugin installed ([Download](https://github.com/vranki/ExtPlan
   *  set __[left / right] pack to [off / auto / high]__ please
 * Bleed air
   *  set __[apu / engine one / engine two] bleed air to [off / on]__ please
+* Power bus
+  *  set __[connect / disconnect] [left / right] [APU / engine] generator__ please
+* Ground power
+  *  set __[connect / disconnect] the ground power__ please
 
 __Cheat sheet:__  
 * __Needed__ 
