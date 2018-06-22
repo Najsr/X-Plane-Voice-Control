@@ -53,6 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Commands\BusPowerControl.cs" />
+    <Compile Include="Commands\LightsControl.cs" />
     <Compile Include="Commands\PackControl.cs" />
     <Compile Include="Commands\ComSwapControl.cs" />
     <Compile Include="Commands\EngineFuelControl.cs" />
