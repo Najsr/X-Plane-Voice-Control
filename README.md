@@ -62,7 +62,7 @@ You need ExtPlane Plugin installed ([Download](https://github.com/vranki/ExtPlan
 
 
 __Cheat sheet:__
-* __Bald text is Mandatory__ 
+* __Bold text is Mandatory__ 
 * Normal text is Optional
 * __X => [zero / one / two / three / four / fiver / six / seven / eight / niner]__
 
