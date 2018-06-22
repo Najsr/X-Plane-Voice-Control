@@ -15,7 +15,8 @@ You need ExtPlane Plugin installed ([Download](https://github.com/vranki/ExtPlan
 ### Installing
 
 * Get the latest release (or [build](https://ci.appveyor.com/project/Najsr/x-plane-voice-control/build/artifacts) for latest features) from [here](https://github.com/Najsr/X-Plane-Voice-Control/releases)
-* Extract the ZIP and run the .exe file 
+* Extract the ZIP and run the .exe file
+* Load into Boeing airplane and press __Connect__
 * Enjoy and report any bugs encountered
 
 ### Command Line Option
@@ -24,45 +25,45 @@ You need ExtPlane Plugin installed ([Download](https://github.com/vranki/ExtPlan
 
 ### Available Commands
 * Parking brake control
-  * __[set the parking brake / engage the brakes / release the brakes / disengage the brakes]__ please
+  * __[set the parking brake / engage the brakes / release the brakes / disengage the brakes]__
 * Com set and swap
   *  __[tune / set] [com1 / com2] to XXX [decimal / point] X__ XX
-  *  __swap [com1 / com2]__ please
+  *  __swap [com1 / com2]__
 * Flaps control
-  * __set flaps [up / down / zero / one / two / five / ten / fifteen / twentyfive / thirty / forty]__ a notch please
+  * __set flaps [up / down / zero / one / two / five / ten / fifteen / twentyfive / thirty / forty]__ a notch
 * Gear control
-  * __set the [gear up / gear down]__ please
+  * __set the [gear up / gear down]__
 * Landing lights control
-  *  set __[landing lights on / landing lights off]__ please
+  *  set __[landing lights on / landing lights off]__
 * Taxi lights control
-  *  set __[taxi lights on / taxi lights off]__ please
+  *  set __[taxi lights on / taxi lights off]__
 * Engine control
-  *  __[start / light up / kill / shut down] the engine number [one / two]__ please
-  *  __introduce fuel [into / to] number engine [one / two]__ please
+  *  __[start / light up / kill / shut down] the engine number [one / two]__
+  *  __introduce fuel [into / to] number engine [one / two]__
 * APU control
-  *  __[start / light up / stop / shutdown] APU__ please
+  *  __[start / light up / stop / shutdown] APU__
   *  __APU [on / off]__ please
 * Probe heat
-  *  set __probe heat [on/off]__ please
+  *  set __probe heat [on/off]__
 * Window heat
-  *  set __window heat [on/off]__ please
+  *  set __window heat [on/off]__
 * No Smoking / Seatbelts
-  *  set __[no smoking / seatbelts] [off / auto / on]__ please
+  *  set __[no smoking / seatbelts] [off / auto / on]__
 * Packs
-  *  set __[left / right] pack to [off / auto / high]__ please
+  *  set __[left / right] pack to [off / auto / high]__
 * Bleed air
-  *  set __[apu / engine one / engine two] bleed air to [off / on]__ please
+  *  set __[apu / engine one / engine two] bleed air to [off / on]__
 * Power bus
-  *  set __[connect / disconnect] [left / right] [APU / engine] generator__ please
+  *  set __[connect / disconnect] [left / right] [APU / engine] generator__
 * Ground power
-  *  set __[connect / disconnect] the ground power__ please
+  *  set __[connect / disconnect] the ground power__
 * Lights
-  *  set __set [logo / position / beacon / wing / wheel] lights to [off / on]__ please
+  *  set __[logo / position / beacon / wing / wheel] lights to [off / on]__
 
 
-__Cheat sheet:__  
-* __Needed__ 
-* Optional
+__Cheat sheet:__
+* __Bald text is Mandatory__ 
+* Normal text is Optional
 * __X => [zero / one / two / three / four / fiver / six / seven / eight / niner]__
 
 ## Built With
