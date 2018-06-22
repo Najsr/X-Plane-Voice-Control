@@ -1,6 +1,6 @@
 # X-Plane Voice Control
 
-Simple to use Voice control made for Zibo's awesome 738X & 739 Ultimate
+Simple to use Voice control made for Zibo's 738X & 739 Ultimate
 
 Latest build: [![Build status](https://ci.appveyor.com/api/projects/status/ejvcv44bm65t9814?svg=true)](https://ci.appveyor.com/project/Najsr/x-plane-voice-control/build/artifacts)
 
@@ -14,7 +14,7 @@ You need ExtPlane Plugin installed ([Download](https://github.com/vranki/ExtPlan
 
 ### Installing
 
-* Get the latest release (or [build](https://ci.appveyor.com/project/Najsr/x-plane-voice-control/build/artifacts) for WIP) from [here](https://github.com/Najsr/X-Plane-Voice-Control/releases)
+* Get the latest release (or [build](https://ci.appveyor.com/project/Najsr/x-plane-voice-control/build/artifacts) for latest features) from [here](https://github.com/Najsr/X-Plane-Voice-Control/releases)
 * Extract the ZIP and run the .exe file 
 * Enjoy and report any bugs encountered
 
