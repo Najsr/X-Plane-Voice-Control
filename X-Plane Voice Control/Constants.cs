@@ -13,6 +13,8 @@ namespace X_Plane_Voice_Control
 
         public static Choices NumberChoices = new Choices(Numbers);
 
+        public static int ButtonReleaseDelay = 700;
+
         public static string StringNumbersToDigits(string input)
         {
             return input.Replace("zero", "0").Replace("one", "1").Replace("two", "2").Replace("three", "3")

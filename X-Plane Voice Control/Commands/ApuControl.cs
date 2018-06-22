@@ -5,9 +5,11 @@ using System.Linq;
 using System.Speech.Recognition;
 using System.Speech.Synthesis;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ExtPlaneNet;
+using ExtPlaneNet.Commands;
 
 namespace X_Plane_Voice_Control.Commands
 {
@@ -34,20 +36,31 @@ namespace X_Plane_Voice_Control.Commands
 
         public override void DataRefSubscribe()
         {
-            XPlaneInterface.Subscribe<double>("laminar/B738/switches/apu_start");
+
         }
 
         public override void OnTrigger(RecognitionResult rResult, string phrase)
         {
-            var apuStatus = XPlaneInterface.GetDataRef<double>("laminar/B738/switches/apu_start");
             if (_apuOnStrings.Any(phrase.Contains) || phrase.Contains(_apuStatus[0]))
             {
-                XPlaneInterface.SetDataRef(apuStatus.Name, 0);
+                Task.Run(() =>
+                {
+                    XPlaneInterface.SetExecutingCommand("laminar/B738/spring_toggle_switch/APU_start_pos_dn");
+                    Thread.Sleep(Constants.ButtonReleaseDelay - 200);
+                    XPlaneInterface.SetExecutingCommand("laminar/B738/spring_toggle_switch/APU_start_pos_dn", Command.CommandType.Begin);
+                    Thread.Sleep(Constants.ButtonReleaseDelay);
+                    XPlaneInterface.SetExecutingCommand("laminar/B738/spring_toggle_switch/APU_start_pos_dn", Command.CommandType.End);
+                });
                 SpeechSynthesizer.SpeakAsync("APU is starting up");
             }
             else if (_apuOffString.Any(phrase.Contains) || phrase.Contains(_apuStatus[1]))
             {
-                XPlaneInterface.SetDataRef(apuStatus.Name, 2);
+                Task.Run(() =>
+                {
+                    XPlaneInterface.SetExecutingCommand("laminar/B738/spring_toggle_switch/APU_start_pos_up");
+                    Thread.Sleep(Constants.ButtonReleaseDelay);
+                    XPlaneInterface.SetExecutingCommand("laminar/B738/spring_toggle_switch/APU_start_pos_up");
+                });
                 SpeechSynthesizer.SpeakAsync("APU is shutting down");
             }
         }
