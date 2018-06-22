@@ -56,6 +56,9 @@ You need ExtPlane Plugin installed ([Download](https://github.com/vranki/ExtPlan
   *  set __[connect / disconnect] [left / right] [APU / engine] generator__ please
 * Ground power
   *  set __[connect / disconnect] the ground power__ please
+* Lights
+  *  set __set [logo / position / beacon / wing / wheel] lights to [off / on]__ please
+
 
 __Cheat sheet:__  
 * __Needed__ 

@@ -77,5 +77,10 @@ namespace X_Plane_Voice_Control
             Console.WriteLine($"Recognized text: {e.Result.Text}. Calling Class {class_.GetType().Name}");
             Console.ForegroundColor = ConsoleColor.White;
         }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            labelInfo.Text += " 0." + Assembly.GetExecutingAssembly().GetName().Version.Minor.ToString("00");
+        }
     }
 }
