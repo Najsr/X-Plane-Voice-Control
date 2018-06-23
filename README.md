@@ -76,6 +76,11 @@ You need ExtPlane Plugin installed ([Download](https://github.com/vranki/ExtPlan
   * __[select / engage / turn on / arm / de-select / disengage / turn off / disarm / toggle] auto throttle__
   * __[select / egnage / turn on / de-select / disengage / turn off] / toggle] v-nav__
   * __[select / engage / turn on / de-select / disengage / turn off] / toggle] l-nav__
+* Heading set
+  * set __heading__ to __XXX__
+* Vertical speed set
+  * set __vertical speed__ to negative V thousand /& X hundred [fifty] [fpm / feet per minute / feet]
+    * __eg: set vertical speed to six thousand five hundred fifty; set vertical speed to six hundred; set vertical speed fifty__
 
 
 __Cheat sheet:__
@@ -83,6 +88,7 @@ __Cheat sheet:__
 * Normal text is Optional
 * __X => [zero / one / two / three / four / fiver / six / seven / eight / niner]__
 * __T => [zero / one / two / three / four / fiver / six / seven]__
+* __V => [zero / one / two / three / four / five / six]__
 
 ## Hard time speaking - train Windows to understand you better?
 * Open Speech Recognition by clicking the Start button, clicking Control Panel, clicking Ease of Access, and then clicking Speech Recognition.

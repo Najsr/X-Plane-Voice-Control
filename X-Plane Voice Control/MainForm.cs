@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Globalization;
 using System.Linq;
 using System.Reflection;
@@ -36,7 +37,8 @@ namespace X_Plane_Voice_Control
             try
             {
                 _extPlaneInterface.Connect();
-                MessageBox.Show("Successfully connected! You can now speak after clicking OK", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                labelConnectionStatus.Text = "Connected";
+                labelConnectionStatus.ForeColor = Color.Green;
             }
             catch (Exception)
             {

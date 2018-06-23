@@ -34,13 +34,14 @@
             this.comboBoxVoices = new System.Windows.Forms.ComboBox();
             this.comboBoxRecognizer = new System.Windows.Forms.ComboBox();
             this.labelRecognizer = new System.Windows.Forms.Label();
+            this.labelConnectionStatus = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // buttonListen
             // 
             this.buttonListen.AutoSize = true;
             this.buttonListen.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonListen.Location = new System.Drawing.Point(263, 105);
+            this.buttonListen.Location = new System.Drawing.Point(264, 105);
             this.buttonListen.Margin = new System.Windows.Forms.Padding(4);
             this.buttonListen.Name = "buttonListen";
             this.buttonListen.Size = new System.Drawing.Size(67, 26);
@@ -61,7 +62,7 @@
             // labelVoice
             // 
             this.labelVoice.AutoSize = true;
-            this.labelVoice.Location = new System.Drawing.Point(13, 10);
+            this.labelVoice.Location = new System.Drawing.Point(14, 10);
             this.labelVoice.Name = "labelVoice";
             this.labelVoice.Size = new System.Drawing.Size(85, 16);
             this.labelVoice.TabIndex = 2;
@@ -71,7 +72,7 @@
             // 
             this.comboBoxVoices.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxVoices.FormattingEnabled = true;
-            this.comboBoxVoices.Location = new System.Drawing.Point(104, 7);
+            this.comboBoxVoices.Location = new System.Drawing.Point(105, 7);
             this.comboBoxVoices.Name = "comboBoxVoices";
             this.comboBoxVoices.Size = new System.Drawing.Size(226, 24);
             this.comboBoxVoices.TabIndex = 3;
@@ -96,11 +97,23 @@
             this.labelRecognizer.TabIndex = 4;
             this.labelRecognizer.Text = "Select recognizer:";
             // 
+            // labelConnectionStatus
+            // 
+            this.labelConnectionStatus.AutoSize = true;
+            this.labelConnectionStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelConnectionStatus.ForeColor = System.Drawing.Color.Red;
+            this.labelConnectionStatus.Location = new System.Drawing.Point(14, 74);
+            this.labelConnectionStatus.Name = "labelConnectionStatus";
+            this.labelConnectionStatus.Size = new System.Drawing.Size(110, 16);
+            this.labelConnectionStatus.TabIndex = 6;
+            this.labelConnectionStatus.Text = "Not Connected";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(344, 145);
+            this.Controls.Add(this.labelConnectionStatus);
             this.Controls.Add(this.comboBoxRecognizer);
             this.Controls.Add(this.labelRecognizer);
             this.Controls.Add(this.comboBoxVoices);
@@ -128,6 +141,7 @@
         private System.Windows.Forms.ComboBox comboBoxVoices;
         private System.Windows.Forms.ComboBox comboBoxRecognizer;
         private System.Windows.Forms.Label labelRecognizer;
+        private System.Windows.Forms.Label labelConnectionStatus;
     }
 }
 
