@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
 using System.Linq;
 using System.Speech.Recognition;
 using System.Speech.Synthesis;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using ExtPlaneNet;
 
 namespace X_Plane_Voice_Control.Commands

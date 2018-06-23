@@ -39,8 +39,6 @@ namespace X_Plane_Voice_Control.Commands
 
         public override void OnTrigger(RecognitionResult rResult, string phrase)
         {
-            //laminar/B738/toggle_switch/apu_gen2_dn
-            var apuPowerAvailable = XPlaneInterface.GetDataRef<double>("laminar/B738/annunciator/ground_power_avail");
             var connectGenerators = phrase.Contains(_generatorPowerStatesStrings[0]);
             var side = string.Empty;
             var actionToDo = _generatorPowerStatesStrings.First(phrase.Contains);
@@ -54,7 +52,10 @@ namespace X_Plane_Voice_Control.Commands
                 side = _generatorSides.First(phrase.Contains);
                 sideIndex = Array.IndexOf(_generatorSides, side) + 1;
             }
-            catch { }
+            catch
+            {
+                // ignored
+            }
 
             if (side != string.Empty)
             {
@@ -63,7 +64,9 @@ namespace X_Plane_Voice_Control.Commands
                     XPlaneInterface.SetExecutingCommand(connectGenerators
                         ? $"laminar/B738/toggle_switch/{generator}gen{sideIndex}_dn"
                         : $"laminar/B738/toggle_switch/{generator}gen{sideIndex}_up", Command.CommandType.Begin);
+
                     Thread.Sleep(Constants.ButtonReleaseDelay);
+
                     XPlaneInterface.SetExecutingCommand(connectGenerators
                         ? $"laminar/B738/toggle_switch/{generator}gen{sideIndex}_dn"
                         : $"laminar/B738/toggle_switch/{generator}gen{sideIndex}_up", Command.CommandType.End);

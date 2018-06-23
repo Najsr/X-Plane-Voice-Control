@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
+﻿using System.Linq;
 using System.Speech.Recognition;
 using System.Speech.Synthesis;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using ExtPlaneNet;
 
 namespace X_Plane_Voice_Control.Commands
@@ -40,7 +34,6 @@ namespace X_Plane_Voice_Control.Commands
         public override void OnTrigger(RecognitionResult rResult, string phrase)
         {
             var value = XPlaneInterface.GetDataRef<float>("sim/flightmodel/controls/flaprqst").Value;
-            var float_ = 0.85f.ToString(CultureInfo.InvariantCulture);
             var command = _flapsPositionStrings.First(phrase.Contains);
             if (command == "up")
             {

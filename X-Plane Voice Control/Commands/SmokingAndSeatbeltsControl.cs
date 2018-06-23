@@ -72,7 +72,8 @@ namespace X_Plane_Voice_Control.Commands
                     XPlaneInterface.SetExecutingCommand(valueToAdd > 0
                         ? "laminar/B738/toggle_switch/seatbelt_sign_dn"
                         : "laminar/B738/toggle_switch/seatbelt_sign_up");
-                };
+                }
+
                 SpeechSynthesizer.SpeakAsync($"Seatbelts set to {actionString}");
             }
         }

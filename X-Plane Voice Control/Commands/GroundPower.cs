@@ -51,7 +51,7 @@ namespace X_Plane_Voice_Control.Commands
                     XPlaneInterface.SetExecutingCommand("laminar/B738/toggle_switch/gpu_up", Command.CommandType.Begin);
                     Thread.Sleep(Constants.ButtonReleaseDelay);
                     XPlaneInterface.SetExecutingCommand("laminar/B738/toggle_switch/gpu_up", Command.CommandType.End);
-                }); ;
+                });
                 SpeechSynthesizer.SpeakAsync("Ground power disconnected");
             }
         }

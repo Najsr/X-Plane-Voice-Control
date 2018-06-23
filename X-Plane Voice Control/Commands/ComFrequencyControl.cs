@@ -2,8 +2,6 @@
 using System.Linq;
 using System.Speech.Recognition;
 using System.Speech.Synthesis;
-using System.Threading;
-using System.Threading.Tasks;
 using ExtPlaneNet;
 
 namespace X_Plane_Voice_Control.Commands
