@@ -56,19 +56,26 @@ You need ExtPlane Plugin installed ([Download](https://github.com/vranki/ExtPlan
 * Packs
   *  set __[left / right] pack to [off / auto / high]__
 * Bleed air
-  *  set __[apu / engine one / engine two] bleed air to [off / on]__
+  *  set __[apu / engine one / engine two] bleed air__ to __[off / on]__
 * Power bus
   *  set __[connect / disconnect] [left / right] [APU / engine] generator__
 * Ground power
   *  set __[connect / disconnect] the ground power__
 * Lights
   *  set __[logo / position / beacon / wing / wheel] lights to [off / on]__
+* Fuel control
+  *  set __[left / right / center / all] fuel pumps__ to __[off / on]__
+  *  set __crossfeed__ to __[on / off]__
+* Transponder
+  *  [tune / set] __[transponder / squawk]__ code to __TTTT__
+  *  set __transponder__ mode to __[off / on]__
 
 
 __Cheat sheet:__
 * __Bold text is Mandatory__ 
 * Normal text is Optional
 * __X => [zero / one / two / three / four / fiver / six / seven / eight / niner]__
+* __T => [zero / one / two / three / four / fiver / six / seven]__
 
 ## Built With
 

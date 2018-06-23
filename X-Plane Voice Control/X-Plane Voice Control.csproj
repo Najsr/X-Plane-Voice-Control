@@ -52,6 +52,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Commands\TransponderModeControl.cs" />
+    <Compile Include="Commands\TransponderCodeControl.cs" />
     <Compile Include="Commands\CrossFeedControl.cs" />
     <Compile Include="Commands\FuelPumpsControl.cs" />
     <Compile Include="Commands\BusPowerControl.cs" />

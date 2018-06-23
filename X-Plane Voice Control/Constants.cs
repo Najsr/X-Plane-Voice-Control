@@ -1,25 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Speech.Recognition;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Speech.Recognition;
 
 namespace X_Plane_Voice_Control
 {
-    static class Constants
+    internal static class Constants
     {
-        public static string[] Numbers = { "zero", "one", "two", "three", "four", "fiver", "six", "seven", "eight", "niner" };
+        private static readonly string[] Numbers = { "zero", "one", "two", "three", "four", "fiver", "six", "seven", "eight", "niner" };
 
-        public static Choices NumberChoices = new Choices(Numbers);
+        private static readonly string[] TransponderNumbers = { "zero", "one", "two", "three", "four", "fiver", "six", "seven"};
 
-        public static int ButtonReleaseDelay = 700;
+        public static readonly Choices NumberChoices = new Choices(Numbers);
+
+        public static readonly Choices TransponderNumberChoices = new Choices(TransponderNumbers);
+
+        public const int ButtonReleaseDelay = 700;
 
         public static string StringNumbersToDigits(string input)
         {
             return input.Replace("zero", "0").Replace("one", "1").Replace("two", "2").Replace("three", "3")
                 .Replace("four", "4").Replace("fiver", "5").Replace("six", "6").Replace("seven", "7")
-                .Replace("eight", "8").Replace("niner", "9").Replace("decimal", "").Replace("point", "");
+                .Replace("eight", "8").Replace("niner", "9").Replace("decimal", "").Replace("point", "").Trim();
         }
 
         public static bool IsValidComFreq(int input)
