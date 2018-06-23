@@ -21,7 +21,7 @@ You need ExtPlane Plugin installed ([Download](https://github.com/vranki/ExtPlan
 
 ### Command Line Option
 
-* Add __--console__ to launch parameter and CMD window will show with info about program
+* Add __--console__ to launch parameter and CMD window will show up with application runtime info
 
 ### Available Commands
 * Parking brake control
