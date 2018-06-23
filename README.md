@@ -30,10 +30,11 @@ You need ExtPlane Plugin installed ([Download](https://github.com/vranki/ExtPlan
   *  __[tune / set] [com1 / com2] to XXX [decimal / point] X__ XX
   *  __swap [com1 / com2]__
 * Nav set and swap
-  *  __[tune / set] [nav1 / navm2] to XXX [decimal / point] X__ X
+  *  __[tune / set] [nav1 / nav2] to XXX [decimal / point] X__ X
   *  __swap [nav1 / nav2]__
 * Flaps control
-  * __set flaps [up / down / zero / one / two / five / ten / fifteen / twentyfive / thirty / forty]__ a notch
+  * set __flaps [up / down / zero / one / two / five / ten / fifteen / twentyfive / thirty / forty]__
+  * set __flaps [up / down] a notch__
 * Gear control
   * __set the [gear up / gear down / raise the landing gear / extend the landing gear]__
 * Landing lights control

@@ -35,9 +35,9 @@ namespace X_Plane_Voice_Control.Commands
 
         public override void DataRefSubscribe()
         {
-            XPlaneInterface.Subscribe<int>("laminar/B738/toggle_switch/bleed_air_1_pos");
-            XPlaneInterface.Subscribe<int>("laminar/B738/toggle_switch/bleed_air_2_pos");
-            XPlaneInterface.Subscribe<int>("laminar/B738/toggle_switch/bleed_air_apu_pos");
+            XPlaneInterface.Subscribe<double>("laminar/B738/toggle_switch/bleed_air_1_pos");
+            XPlaneInterface.Subscribe<double>("laminar/B738/toggle_switch/bleed_air_2_pos");
+            XPlaneInterface.Subscribe<double>("laminar/B738/toggle_switch/bleed_air_apu_pos");
         }
 
         public override void OnTrigger(RecognitionResult rResult, string phrase)

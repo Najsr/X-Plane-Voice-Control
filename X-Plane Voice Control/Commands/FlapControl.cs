@@ -13,18 +13,17 @@ namespace X_Plane_Voice_Control.Commands
 {
     class FlapControl : ControlTemplate
     {
-        private readonly string[] _flapsUpStrings = { "up" };
-        private readonly string[] _flapsDownStrings = { "down" };
-        private readonly string[] _flapsPositionsStrings = { "zero", "one", "two", "five", "ten", "fifteen", "twentyfive", "thirty", "forty" };
-        private readonly string _aNotch = "a notch";
+        private readonly string[] _flapsPositionStrings = { "up", "down", "zero", "one", "two", "five", "ten", "fifteen", "twentyfive", "thirty", "forty" };
+        private const string ANotch = "a notch";
+
         public FlapControl(ExtPlaneInterface interface_, SpeechSynthesizer synthesizer) : base(interface_, synthesizer)
         {
             var flapGrammar = new GrammarBuilder();
             flapGrammar.Append("please", 0, 1);
             flapGrammar.Append("set", 0, 1);
             flapGrammar.Append("flaps", 1, 1);
-            flapGrammar.Append(new Choices(_flapsUpStrings.Concat(_flapsDownStrings).ToArray().Concat(_flapsPositionsStrings).ToArray()));
-            flapGrammar.Append(_aNotch, 0, 1);
+            flapGrammar.Append(new Choices(_flapsPositionStrings));
+            flapGrammar.Append(ANotch, 0, 1);
             flapGrammar.Append("please", 0, 1);
             Grammar = new Grammar(flapGrammar);
             RecognitionPattern = Constants.DeserializeRecognitionPattern(flapGrammar.DebugShowPhrases);
@@ -41,45 +40,43 @@ namespace X_Plane_Voice_Control.Commands
         public override void OnTrigger(RecognitionResult rResult, string phrase)
         {
             var value = XPlaneInterface.GetDataRef<float>("sim/flightmodel/controls/flaprqst").Value;
-            var command = string.Empty;
-            foreach (var s in phrase.Split(' '))
-            {
-                if (_flapsUpStrings.Contains(s))
-                    command = "up";
-                if (_flapsDownStrings.Contains(s))
-                    command = "down";
-                if (_flapsPositionsStrings.Contains(s))
-                    command = s;
-            }
+            var float_ = 0.85f.ToString(CultureInfo.InvariantCulture);
+            var command = _flapsPositionStrings.First(phrase.Contains);
             if (command == "up")
             {
-                if (phrase.Contains(_aNotch))
+                if (phrase.Contains(ANotch))
                 {
-                    XPlaneInterface.SetDataRef("sim/flightmodel/controls/flaprqst", value + 0.125f);
+                    var valueToSet = value - 0.125f;
+                    if (valueToSet < 0)
+                        valueToSet = 0;
+                    XPlaneInterface.SetDataRef("sim/flightmodel/controls/flaprqst", valueToSet);
                     SpeechSynthesizer.SpeakAsync("Flaps are going up a notch.");
                 }
                 else
                 {
-                    XPlaneInterface.SetDataRef("sim/flightmodel/controls/flaprqst", 0f);
+                    XPlaneInterface.SetExecutingCommand("laminar/B738/push_button/flaps_0");
                     SpeechSynthesizer.SpeakAsync("Flaps are going up.");
                 }
             }
             else if (command == "down")
             {
-                if (phrase.Contains(_aNotch))
+                if (phrase.Contains(ANotch))
                 {
-                    XPlaneInterface.SetDataRef("sim/flightmodel/controls/flaprqst", value - 0.125f);
+                    var valueToSet = value + 0.125f;
+                    if (valueToSet > 1)
+                        valueToSet = 1;
+                    XPlaneInterface.SetDataRef("sim/flightmodel/controls/flaprqst", valueToSet);
                     SpeechSynthesizer.SpeakAsync("Flaps are going down a notch.");
                 }
                 else
                 {
-                    XPlaneInterface.SetDataRef("sim/flightmodel/controls/flaprqst", 1f);
+                    XPlaneInterface.SetExecutingCommand("laminar/B738/push_button/flaps_40");
                     SpeechSynthesizer.SpeakAsync("Flaps are going down.");
                 }
             }
             else if (command != string.Empty)
             {
-                XPlaneInterface.SetDataRef("sim/flightmodel/controls/flaprqst", FlapPositions.StringtoFlap(command));
+                XPlaneInterface.SetExecutingCommand($"laminar/B738/push_button/flaps_{FlapPositions.StringtoInt(command)}");
                 SpeechSynthesizer.SpeakAsync($"Flaps {command}.");
             }
 
@@ -120,6 +117,33 @@ namespace X_Plane_Voice_Control.Commands
                     return Thirty;
                 case "forty":
                     return Forty;
+            }
+
+            return 0;
+        }
+
+        public static int StringtoInt(string input)
+        {
+            switch (input.ToLower())
+            {
+                case "zero":
+                    return 0;
+                case "one":
+                    return 1;
+                case "two":
+                    return 2;
+                case "five":
+                    return 5;
+                case "ten":
+                    return 10;
+                case "fifteen":
+                    return 15;
+                case "twentyfive":
+                    return 25;
+                case "thirty":
+                    return 30;
+                case "forty":
+                    return 40;
             }
 
             return 0;

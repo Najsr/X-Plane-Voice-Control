@@ -34,8 +34,8 @@ namespace X_Plane_Voice_Control.Commands
 
         public override void DataRefSubscribe()
         {
-            XPlaneInterface.Subscribe<int>("laminar/B738/air/l_pack_pos");
-            XPlaneInterface.Subscribe<int>("laminar/B738/air/r_pack_pos");
+            XPlaneInterface.Subscribe<double>("laminar/B738/air/l_pack_pos");
+            XPlaneInterface.Subscribe<double>("laminar/B738/air/r_pack_pos");
         }
 
         public override void OnTrigger(RecognitionResult rResult, string phrase)
