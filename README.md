@@ -69,6 +69,13 @@ You need ExtPlane Plugin installed ([Download](https://github.com/vranki/ExtPlan
 * Transponder
   *  [tune / set] __[transponder / squawk]__ code to __TTTT__
   *  set __transponder__ mode to __[off / on]__
+* Autopilot controls
+  * __[select / engage / turn on / arm / de-select / disengage / turn off / disarm] auto pilot__ [a / b]
+  * __[select / engage / turn on / arm / de-select / disengage / turn off / disarm / toggle] flight director__
+  * __[select / egnage / turn on / de-select / disengage / turn off] / toggle] heading select__
+  * __[select / engage / turn on / arm / de-select / disengage / turn off / disarm / toggle] auto throttle__
+  * __[select / egnage / turn on / de-select / disengage / turn off] / toggle] v-nav__
+  * __[select / engage / turn on / de-select / disengage / turn off] / toggle] l-nav__
 
 
 __Cheat sheet:__
