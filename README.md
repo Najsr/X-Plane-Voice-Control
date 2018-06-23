@@ -58,9 +58,9 @@ You need ExtPlane Plugin installed ([Download](https://github.com/vranki/ExtPlan
 * Bleed air
   *  set __[apu / engine one / engine two] bleed air__ to __[off / on]__
 * Power bus
-  *  set __[connect / disconnect] [left / right] [APU / engine] generator__
+  *  __[connect / disconnect] [left / right] [APU / engine] generator__
 * Ground power
-  *  set __[connect / disconnect] the ground power__
+  *  __[connect / disconnect] the ground power__
 * Lights
   *  set __[logo / position / beacon / wing / wheel] lights to [off / on]__
 * Fuel control
