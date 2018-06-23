@@ -24,10 +24,15 @@ namespace X_Plane_Voice_Control
 
         private readonly SpeechSynthesizer _synthesizer = new SpeechSynthesizer();
 
-        private readonly SpeechRecognitionEngine _speechRecognitionEngine = new SpeechRecognitionEngine(new CultureInfo("en-US"));
+        private SpeechRecognitionEngine _speechRecognitionEngine;
 
         private void ButtonListen_Click(object sender, EventArgs e)
         {
+            if (_speechRecognitionEngine == null || comboBoxRecognizer.Items.Count == 0)
+            {
+                MessageBox.Show("You must select voice and recognizer culture first!", "Check input please!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                return;
+            }
             try
             {
                 _extPlaneInterface.Connect();
@@ -81,6 +86,29 @@ namespace X_Plane_Voice_Control
         private void MainForm_Load(object sender, EventArgs e)
         {
             labelInfo.Text += " 0." + Assembly.GetExecutingAssembly().GetName().Version.Minor.ToString("00");
+            foreach (var installedVoice in _synthesizer.GetInstalledVoices())
+            {
+                comboBoxVoices.Items.Add(installedVoice.VoiceInfo.Name);
+            }
+            if (comboBoxVoices.Items.Count > 0)
+                comboBoxVoices.SelectedIndex = 0;
+            foreach (var installedRecognizer in SpeechRecognitionEngine.InstalledRecognizers())
+            {
+                if (installedRecognizer.Culture.TwoLetterISOLanguageName.Equals("en"))
+                    comboBoxRecognizer.Items.Add(installedRecognizer.Culture.Name);
+            }
+            if (comboBoxRecognizer.Items.Count > 0)
+                comboBoxRecognizer.SelectedIndex = 0;
+        }
+
+        private void comboBoxVoices_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            _synthesizer.SelectVoice(comboBoxVoices.Items[comboBoxVoices.SelectedIndex].ToString());
+        }
+
+        private void comboBoxRecognizer_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            _speechRecognitionEngine = new SpeechRecognitionEngine(new CultureInfo(comboBoxRecognizer.Items[comboBoxRecognizer.SelectedIndex].ToString()));
         }
     }
 }

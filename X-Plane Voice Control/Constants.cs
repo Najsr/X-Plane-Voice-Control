@@ -27,6 +27,11 @@ namespace X_Plane_Voice_Control
             return input >= 11800 && input <= 13690 && input % 5 == 0;
         }
 
+        public static bool IsValidNavFreq(int input)
+        {
+            return input >= 10800 && input <= 11795 && input % 5 == 0;
+        }
+
         public static string DeserializeRecognitionPattern(string input)
         {
             return input.Replace(",", " / ").Replace("‘", "").Replace("’", "");

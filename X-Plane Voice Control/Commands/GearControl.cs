@@ -1,4 +1,5 @@
-﻿using System.Speech.Recognition;
+﻿using System.Linq;
+using System.Speech.Recognition;
 using System.Speech.Synthesis;
 using System.Threading;
 using System.Threading.Tasks;
@@ -8,14 +9,17 @@ namespace X_Plane_Voice_Control.Commands
 {
     class GearControl : ControlTemplate
     {
-
+        public string[] GearUpPhrases = { "gear up", "raise the landing gear" };
+        public string[] GearDownPhrases = { "gear down", "extend the landing gear" };
         public GearControl(ExtPlaneInterface interface_, SpeechSynthesizer synthesizer) : base(interface_, synthesizer)
         {
             var gearGrammar = new GrammarBuilder();
-            gearGrammar.Append("please", 0, 1);
-            gearGrammar.Append("set", 0, 1);
-            gearGrammar.Append("the", 0, 1);
-            gearGrammar.Append(new Choices("gear up", "gear down"));
+            var gearGrammarBuilders = new[]
+            {
+                new GrammarBuilder(new Choices(GearUpPhrases)),
+                new GrammarBuilder(new Choices(GearDownPhrases))
+            };
+            gearGrammar.Append(new Choices(gearGrammarBuilders));
             gearGrammar.Append("please", 0, 1);
             Grammar = new Grammar(gearGrammar);
             RecognitionPattern = Constants.DeserializeRecognitionPattern(gearGrammar.DebugShowPhrases);
@@ -37,7 +41,7 @@ namespace X_Plane_Voice_Control.Commands
 
         public override void OnTrigger(RecognitionResult rResult, string phrase)
         {
-            double valueToSet = phrase.Contains("up") ? 0 : 2;
+            double valueToSet = GearUpPhrases.Any(phrase.Contains) ? 0 : 2;
             if (XPlaneInterface.GetDataRef<double>("laminar/B738/switches/landing_gear").Value == 1f && valueToSet == 0)
                 return;
             XPlaneInterface.SetDataRef("laminar/B738/switches/landing_gear", valueToSet);

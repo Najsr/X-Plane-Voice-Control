@@ -8,20 +8,20 @@ using ExtPlaneNet;
 
 namespace X_Plane_Voice_Control.Commands
 {
-    class ComFrequencyControl : ControlTemplate
+    class NavFrequencyControl : ControlTemplate
     {
-        private readonly string[] _comRadios = { "com1", "com2" };
+        private readonly string[] _navRadios = { "nav1", "nav2" };
 
-        public ComFrequencyControl(ExtPlaneInterface interface_, SpeechSynthesizer synthesizer) : base(interface_, synthesizer)
+        public NavFrequencyControl(ExtPlaneInterface interface_, SpeechSynthesizer synthesizer) : base(interface_, synthesizer)
         {
             var frequencyGrammar = new GrammarBuilder();
             frequencyGrammar.Append("please", 0, 1);
             frequencyGrammar.Append(new Choices("tune", "set"));
-            frequencyGrammar.Append(new Choices(_comRadios));
+            frequencyGrammar.Append(new Choices(_navRadios));
             frequencyGrammar.Append("to");
             frequencyGrammar.Append(Constants.NumberChoices, 3, 3);
             frequencyGrammar.Append(new Choices("decimal", "point"));
-            frequencyGrammar.Append(Constants.NumberChoices, 1, 3);
+            frequencyGrammar.Append(Constants.NumberChoices, 1, 2);
             Grammar = new Grammar(frequencyGrammar);
             RecognitionPattern = Constants.DeserializeRecognitionPattern(frequencyGrammar.DebugShowPhrases);
         }
@@ -30,33 +30,23 @@ namespace X_Plane_Voice_Control.Commands
 
         public override void DataRefSubscribe()
         {
-            XPlaneInterface.Subscribe<int>("sim/cockpit2/radios/actuators/com1_standby_frequency_hz");
-            XPlaneInterface.Subscribe<int>("sim/cockpit2/radios/actuators/com2_standby_frequency_hz");
+            XPlaneInterface.Subscribe<int>("sim/cockpit2/radios/actuators/nav1_standby_frequency_hz");
+            XPlaneInterface.Subscribe<int>("sim/cockpit2/radios/actuators/nav2_standby_frequency_hz");
         }
 
         public override void OnTrigger(RecognitionResult rResult, string phrase)
         {
-            var radioToSwap = _comRadios.First(phrase.Contains);
-
+            var radioToSwap = _navRadios.First(phrase.Contains);
             var stringFreq =
                 Constants.StringNumbersToDigits(phrase).Split(new[] { $"{radioToSwap} to " }, StringSplitOptions.None)[1]
                     .Replace(" ", "");
-            var trailing = false;
-            if (stringFreq.Length == 6)
-            {
-                if (stringFreq[5] == '5')
-                    trailing = true;
-                stringFreq = stringFreq.Remove(5, 1);
-            }
             stringFreq += new string('0', 5 - stringFreq.Length);
             var freq = int.Parse(stringFreq);
-            if (!Constants.IsValidComFreq(freq))
+            if (!Constants.IsValidNavFreq(freq))
                 return;
             var dataRef = $"sim/cockpit2/radios/actuators/{radioToSwap}_standby_frequency_hz";
 
             XPlaneInterface.SetDataRef(dataRef, freq);
-            if (trailing)
-                XPlaneInterface.SetExecutingCommand("laminar/B738/rtp_L/freq_khz/sel_dial_up");
         }
 
     }

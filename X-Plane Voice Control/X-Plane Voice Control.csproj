@@ -53,9 +53,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Commands\BusPowerControl.cs" />
+    <Compile Include="Commands\NavFrequencyControl.cs" />
     <Compile Include="Commands\LightsControl.cs" />
     <Compile Include="Commands\PackControl.cs" />
-    <Compile Include="Commands\ComSwapControl.cs" />
+    <Compile Include="Commands\RadiosSwapControl.cs" />
     <Compile Include="Commands\EngineFuelControl.cs" />
     <Compile Include="Commands\FlapControl.cs" />
     <Compile Include="Commands\LandingLights.cs" />
