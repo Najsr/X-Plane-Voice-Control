@@ -36,6 +36,7 @@ namespace X_Plane_Voice_Control
             try
             {
                 _extPlaneInterface.Connect();
+                MessageBox.Show("Successfully connected! You can now speak after clicking OK", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception)
             {
