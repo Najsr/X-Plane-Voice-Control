@@ -52,6 +52,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Commands\CrossFeedControl.cs" />
+    <Compile Include="Commands\FuelPumpsControl.cs" />
     <Compile Include="Commands\BusPowerControl.cs" />
     <Compile Include="Commands\NavFrequencyControl.cs" />
     <Compile Include="Commands\LightsControl.cs" />
