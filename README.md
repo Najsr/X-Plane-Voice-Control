@@ -84,6 +84,12 @@ __Cheat sheet:__
 * __X => [zero / one / two / three / four / fiver / six / seven / eight / niner]__
 * __T => [zero / one / two / three / four / fiver / six / seven]__
 
+## Hard time speaking - train Windows to understand you better?
+* Open Speech Recognition by clicking the Start button, clicking Control Panel, clicking Ease of Access, and then clicking Speech Recognition.
+* Click “Train your computer to better understand you.”
+* Follow the instructions on the screen.
+
+
 ## Built With
 
 * [.NET Framework](https://www.microsoft.com/net/download/windows/)
