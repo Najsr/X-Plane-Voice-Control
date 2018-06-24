@@ -9,7 +9,9 @@ Latest build: [![Build status](https://ci.appveyor.com/api/projects/status/ejvcv
 
 ### Prerequisites
 
-You need ExtPlane Plugin installed ([Download](https://github.com/vranki/ExtPlane/releases))
+* You need ExtPlane Plugin installed ([Download](https://github.com/vranki/ExtPlane/releases))
+* You need English Speech recognition and Text-to-speech installed on your Windows machine
+![](https://i.imgur.com/IrcPvQl.png )
 
 
 ### Installing
