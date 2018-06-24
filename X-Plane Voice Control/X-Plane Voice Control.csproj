@@ -52,8 +52,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Commands\VertticalSpeedControl.cs" />
+    <Compile Include="Commands\ApproachControl.cs" />
     <Compile Include="Commands\AutoPilotControl.cs" />
     <Compile Include="Commands\FlightDirectorControl.cs" />
+    <Compile Include="Commands\AltitudeMcpControl.cs" />
+    <Compile Include="Commands\AltitudeHoldControl.cs" />
+    <Compile Include="Commands\LocalizerControl.cs" />
+    <Compile Include="Commands\N1Control.cs" />
+    <Compile Include="Commands\SpeedControl.cs" />
+    <Compile Include="Commands\LvlChange.cs" />
     <Compile Include="Commands\VerticalSpeedMCPControl.cs" />
     <Compile Include="Commands\HeadingSelControl.cs" />
     <Compile Include="Commands\AutoThrottleControl.cs" />

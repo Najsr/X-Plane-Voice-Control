@@ -83,7 +83,25 @@ Latest build: [![Build status](https://ci.appveyor.com/api/projects/status/ejvcv
 * Vertical speed set
   * set __vertical speed__ to negative V thousand /& X hundred [fifty] [fpm / feet per minute / feet]
     * __eg: set vertical speed to six thousand five hundred fifty; set vertical speed to six hundred; set vertical speed fifty__
-
+* Altitude set
+  * set __altitude__ to XX thousand XX hundred feet
+  * set __altitude__ to __FL XXX__
+* Vertical speed button
+  * __[select] / [de-select / toggle] vertical speed__ mode
+* Approach button
+  * __[select] / [de-select / toggle] approach__ mode
+* Altitude hold
+  * __[select] / [de-select] / toggle] altitude hold__ mode
+* Localizer
+  * __[select] / [de-select] / toggle] localizer__ mode
+* N1 
+  * __[select] / [de-select] / toggle] n1__ mode
+* Speed
+  * __[select] / [de-select] / toggle] speed__ mode
+* Level change
+  * __[select] / [de-select] / toggle] level change__
+* Heading select
+  * __[select / egnage / turn on / de-select / disengage / turn off / toggle] heading select__
 
 __Cheat sheet:__
 * __Bold text is Mandatory__ 
@@ -92,7 +110,7 @@ __Cheat sheet:__
 * __T => [zero / one / two / three / four / fiver / six / seven]__
 * __V => [zero / one / two / three / four / five / six]__
 
-## Hard time speaking - train Windows to understand you better?
+## Hard time speaking - train Windows to understand you better!
 * Open Speech Recognition by clicking the Start button, clicking Control Panel, clicking Ease of Access, and then clicking Speech Recognition.
 * Click “Train your computer to better understand you.”
 * Follow the instructions on the screen.

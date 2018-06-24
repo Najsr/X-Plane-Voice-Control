@@ -2,16 +2,14 @@
 using System.Linq;
 using System.Speech.Recognition;
 using System.Speech.Synthesis;
-using System.Threading;
-using System.Threading.Tasks;
 using ExtPlaneNet;
 
 namespace X_Plane_Voice_Control.Commands
 {
-    class VerticalSpeedMCPControl : ControlTemplate
+    class VerticalSpeedMcpControl : ControlTemplate
     {
 
-        public VerticalSpeedMCPControl(ExtPlaneInterface interface_, SpeechSynthesizer synthesizer) : base(interface_, synthesizer)
+        public VerticalSpeedMcpControl(ExtPlaneInterface interface_, SpeechSynthesizer synthesizer) : base(interface_, synthesizer)
         {
             var headingGrammar = new GrammarBuilder();
 
@@ -55,7 +53,10 @@ namespace X_Plane_Voice_Control.Commands
                 var startingIndex = stringHeading.IndexOf(startingIndexNumber, StringComparison.Ordinal);
                 stringHeading = stringHeading.Substring(startingIndex, stringHeading.Length - startingIndex);
             }
-            catch { }
+            catch
+            {
+                // ignored
+            }
 
             var splittedString = stringHeading.Split(' ');
             float verticalSpeedToSet = 0;

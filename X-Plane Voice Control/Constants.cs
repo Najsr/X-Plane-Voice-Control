@@ -14,6 +14,12 @@ namespace X_Plane_Voice_Control
 
         public static readonly string[] NumbersInDigits = { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 
+        public static readonly string[] NumbersInDigits40 =
+        {
+            "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21",
+            "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42"
+        };
+
         public static readonly Choices NumberChoices = new Choices(Numbers);
 
         public static readonly Choices ClassicNumberChoices = new Choices(ClassicNumbers);
@@ -21,6 +27,8 @@ namespace X_Plane_Voice_Control
         public static readonly Choices TransponderNumberChoices = new Choices(TransponderNumbers);
 
         public static readonly Choices VerticalSpeedNumberChoices = new Choices(VerticalSpeedNumbers);
+
+        public static readonly Choices AltitudeNumberChoices = new Choices(NumbersInDigits40);
 
         public const int ButtonReleaseDelay = 700;
 
