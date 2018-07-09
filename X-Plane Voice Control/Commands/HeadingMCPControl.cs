@@ -1,6 +1,4 @@
-﻿using System;
-using System.Linq;
-using System.Speech.Recognition;
+﻿using System.Speech.Recognition;
 using System.Speech.Synthesis;
 using System.Threading;
 using System.Threading.Tasks;
@@ -8,10 +6,10 @@ using ExtPlaneNet;
 
 namespace X_Plane_Voice_Control.Commands
 {
-    class HeadingMCPControl : ControlTemplate
+    class HeadingMcpControl : ControlTemplate
     {
 
-        public HeadingMCPControl(ExtPlaneInterface interface_, SpeechSynthesizer synthesizer) : base(interface_, synthesizer)
+        public HeadingMcpControl(ExtPlaneInterface interface_, SpeechSynthesizer synthesizer) : base(interface_, synthesizer)
         {
             var headingGrammar = new GrammarBuilder();
             headingGrammar.Append("please", 0, 1);
