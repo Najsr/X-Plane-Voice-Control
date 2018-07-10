@@ -101,7 +101,7 @@ namespace X_Plane_Voice_Control
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            labelInfo.Text += " 0." + Assembly.GetExecutingAssembly().GetName().Version.Minor.ToString("00");
+            labelInfo.Text += " 0." + Assembly.GetExecutingAssembly().GetName().Version.Minor.ToString("0");
             comboBoxVoices.Items.Add(" -- NONE -- ");
             foreach (var installedVoice in _synthesizer.GetInstalledVoices())
             {
