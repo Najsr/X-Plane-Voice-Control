@@ -1,5 +1,4 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using System.Speech.Recognition;
 using System.Speech.Synthesis;
 using System.Threading;

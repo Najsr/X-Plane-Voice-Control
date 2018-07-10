@@ -63,6 +63,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Commands\CourseMcpControl.cs" />
+    <Compile Include="Commands\SpeedChangeoverControl.cs" />
+    <Compile Include="Commands\SpeedInterventionControl.cs" />
+    <Compile Include="Commands\AltitudeInterventionControl.cs" />
     <Compile Include="Commands\VertticalSpeedControl.cs" />
     <Compile Include="Commands\ApproachControl.cs" />
     <Compile Include="Commands\AutoPilotControl.cs" />
@@ -155,4 +159,8 @@
     <Error Condition="!Exists('..\packages\Costura.Fody.3.1.0\build\Costura.Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Costura.Fody.3.1.0\build\Costura.Fody.targets'))" />
   </Target>
   <Import Project="..\packages\Costura.Fody.3.1.0\build\Costura.Fody.targets" Condition="Exists('..\packages\Costura.Fody.3.1.0\build\Costura.Fody.targets')" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
 </Project>

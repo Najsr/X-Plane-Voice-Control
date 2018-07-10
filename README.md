@@ -102,6 +102,13 @@ Latest build: [![Build status](https://ci.appveyor.com/api/projects/status/ejvcv
   * __[select] / [de-select] / toggle] level change__
 * Heading select
   * __[select / egnage / turn on / de-select / disengage / turn off / toggle] heading select__
+* Altitude & Speed intervention
+  * __toggle altitude intervention__
+  * __toggle speed intervention__
+* Speed changeover
+  * __toggle__ speed __changeover__
+* Course set
+  * set __course__ to __XXX__
 
 __Cheat sheet:__
 * __Bold text is Mandatory__ 
